@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.abnn965.totalmemberinvolvement.RegisterActivity"
+    tools:showIn="@layout/activity_register">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Member Sign Up"
+        android:id="@+id/textView2"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="#FF6600"
+        android:textSize="40sp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/edtMemberName"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="38dp"
+        android:hint="Name"
+        android:textSize="20sp"
+        android:background="#0099CC"
+        android:textColor="#fff"
+        android:textColorHint="#fff" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/edtMemberSurname"
+        android:layout_below="@+id/edtMemberName"
+        android:layout_centerHorizontal="true"
+        android:hint="Surname"
+        android:textSize="20sp"
+        android:background="#0099CC"
+        android:layout_marginTop="5sp"
+        android:textColor="#fff"
+        android:textColorHint="#fff" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/edtMemberEmail"
+        android:layout_below="@+id/edtMemberSurname"
+        android:layout_centerHorizontal="true"
+        android:hint="Email"
+        android:textSize="20sp"
+        android:background="#0099CC"
+        android:layout_marginTop="5sp"
+        android:textColor="#fff"
+        android:textColorHint="#fff" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/edtMemberPassword"
+        android:layout_below="@+id/edtMemberEmail"
+        android:layout_centerHorizontal="true"
+        android:hint="Password"
+        android:textSize="20sp"
+        android:background="#0099CC"
+        android:layout_marginTop="5sp"
+        android:textColor="#fff"
+        android:textColorHint="#fff" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:inputType="phone"
+        android:ems="10"
+        android:id="@+id/edtMemberMobile"
+        android:layout_below="@+id/edtMemberPassword"
+        android:layout_centerHorizontal="true"
+        android:hint="Mobile"
+        android:textSize="20sp"
+        android:background="#0099CC"
+        android:layout_marginTop="5sp"
+        android:textColor="#fff"
+        android:textColorHint="#fff" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:inputType="textPostalAddress"
+        android:ems="10"
+        android:id="@+id/edtMemberAddress"
+        android:layout_below="@+id/edtMemberMobile"
+        android:layout_centerHorizontal="true"
+        android:hint="Phyiscal Address"
+        android:textSize="20sp"
+        android:background="#0099CC"
+        android:layout_marginTop="5sp"
+        android:textColor="#fff"
+        android:textColorHint="#fff" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:id="@+id/btnSubmitRegistration"
+        android:layout_below="@+id/edtMemberAddress"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/gradient_bg_round"
+        android:textColor="#fff"
+        android:textSize="20sp"
+        android:onClick="onClickRegisterUser"
+        android:hint="Submit"
+        android:textColorHint="#fff" />
+</RelativeLayout>

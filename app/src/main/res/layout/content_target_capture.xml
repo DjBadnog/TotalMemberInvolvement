@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="fill_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_main" tools:context=".MainActivity"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Capture Target"
+        android:id="@+id/textView"
+        android:gravity="center"
+        android:textIsSelectable="false"
+        android:textSize="40dp"
+        android:textColor="#FF6600"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="false"
+        android:layout_marginTop="-70dp" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:inputType="textPersonName"
+        android:hint="Name"
+
+        android:ems="10"
+        android:id="@+id/edtTargetName"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:background="#0099FF"
+        android:textColorHint="#ffffff"
+        android:textSize="20sp"
+        android:textColor="#fff" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:inputType="textPersonName"
+
+        android:ems="10"
+        android:id="@+id/editTextSName"
+        android:layout_below="@+id/edtTargetName"
+        android:layout_alignLeft="@+id/edtTargetName"
+        android:layout_alignStart="@+id/edtTargetName"
+        android:background="#0099FF"
+        android:layout_marginTop="5dp"
+        android:textColorHint="#ffffff"
+        android:hint="Surname"
+        android:textSize="20sp"
+        android:textColor="#fff" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/edtTargertEmail"
+        android:layout_below="@+id/editTextSName"
+        android:layout_alignLeft="@+id/editTextSName"
+        android:layout_alignStart="@+id/editTextSName"
+
+        android:background="#0099FF"
+        android:layout_marginTop="5dp"
+        android:textColorHint="#ffffff"
+        android:hint="Email"
+        android:textSize="20sp"
+        android:textColor="#fff" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:inputType="phone"
+        android:ems="10"
+        android:id="@+id/edtTargetMobile"
+        android:layout_below="@+id/edtTargertEmail"
+        android:layout_alignLeft="@+id/edtTargertEmail"
+        android:layout_alignStart="@+id/edtTargertEmail"
+
+        android:background="#0099FF"
+        android:layout_marginTop="5dp"
+        android:textColorHint="#ffffff"
+        android:hint="Mobile"
+        android:textSize="20sp"
+        android:textColor="#fff" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:inputType="textPostalAddress"
+        android:ems="10"
+        android:id="@+id/editTargetAddres"
+        android:layout_below="@+id/edtTargetMobile"
+        android:layout_alignLeft="@+id/edtTargetMobile"
+        android:layout_alignStart="@+id/edtTargetMobile"
+        android:hint="Physical Address"
+        android:background="#0099FF"
+        android:layout_marginTop="5dp"
+        android:textColorHint="#ffffff"
+        android:textSize="20sp"
+        android:textColor="#fff" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="65dp"
+        android:id="@+id/btnTargetSubmit"
+        android:layout_below="@+id/editTargetAddres"
+        android:layout_alignLeft="@+id/editTargetAddres"
+        android:layout_alignStart="@+id/editTargetAddres"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/gradient_bg_round"
+        android:textSize="30dp"
+        android:textColor="#ffffff"
+        android:hint="Submit"
+        android:textColorHint="#ffffff"
+        android:onClick="onClickAddTarget" />
+
+</RelativeLayout>
