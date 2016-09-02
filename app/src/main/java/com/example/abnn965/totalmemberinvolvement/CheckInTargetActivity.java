@@ -76,7 +76,7 @@ public class CheckInTargetActivity extends AppCompatActivity {
 
         String TABLE = "target_table";
         db = database.getReadableDatabase();
-        String query = "SELECT * FROM "+ TABLE+" WHERE USER_EMAIL_ADDRESS ='"+cEmail+"'";
+        String query = "SELECT * FROM "+ TABLE+" WHERE USER_EMAIL_ADDRESS ='"+cEmail.toString()+"'";
         Cursor cursor = db.rawQuery(query, null);
 
         while(cursor.moveToNext()){
