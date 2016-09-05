@@ -36,7 +36,7 @@
         <activity
             android:name=".HomeNavigationDrawerActivity"
             android:label="@string/title_activity_home_navigation_drawer"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

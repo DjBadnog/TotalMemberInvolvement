@@ -67,6 +67,12 @@ public class HomeNavigationDrawerActivity extends AppCompatActivity
         Toast.makeText(this, ""+cEmail,Toast.LENGTH_LONG).show();
     }
 
+    public void onClickViewTargets(View view){
+
+//        Intent viewTargetIntent = new Intent(HomeNavigationDrawerActivity.this, ViewTargetsActivity.class);
+//        startActivity(viewTargetIntent);
+    }
+
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

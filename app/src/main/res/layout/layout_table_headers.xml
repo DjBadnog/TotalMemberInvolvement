@@ -1,70 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_weight="1"
+    android:background="#5A9BD5"
+    android:id="@+id/tableRowHeader">
 
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="0dp"
-        android:id="@+id/tableRowHeader">
+    <TextView
+        android:layout_width="98dp"
+        android:layout_height="40dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/tvNameHeader"
+        android:textStyle="bold"
+        android:textSize="13sp"
+        android:textColor="#FFFFFF"
+        android:paddingLeft="3dp"
+        android:background="@drawable/cell_shape"
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="0dp" />
 
-        <TextView
-            android:layout_width="98dp"
-            android:layout_height="70dp"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Medium Text"
-            android:id="@+id/tvNameHeader"
-            android:textStyle="bold"
-            android:textSize="10sp"
-            android:textColor="#FFFFFF"
-            android:background="@drawable/cell_shape"
-            android:padding="30dip"
-            android:layout_marginLeft="0dp" />
-
-           <TextView
-            android:layout_width="98dp"
-            android:layout_height="70dp"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Medium Text"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold"
-            android:id="@+id/tvEmailHeader"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/cell_shape"
-            android:textSize="10sp"
-            android:layout_marginLeft="0dp"
-            android:padding="30dp" />
+    <TextView
+        android:layout_width="98dp"
+        android:layout_height="40dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:id="@+id/tvEmailHeader"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/cell_shape"
+        android:textSize="13sp"
+        android:paddingLeft="3dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="0dp"
+        />
 
 
-           <TextView
-            android:layout_width="98dp"
-            android:layout_height="70dp"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Medium Text"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold"
-            android:id="@+id/tvAddressHeader"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/cell_shape"
-            android:textSize="10sp"
-            android:layout_marginLeft="0dp"
-            android:padding="30dp" />
+    <TextView
+        android:layout_width="98dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="0dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:id="@+id/tvAddressHeader"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/cell_shape"
+        android:textSize="13sp"
+        android:paddingLeft="3dp"
+        android:layout_marginLeft="0dp"
+        />
 
-        <TextView
-            android:layout_width="98dp"
-            android:layout_height="70dp"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Medium Text"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold"
-            android:id="@+id/tvActionsHeader"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/cell_shape"
-            android:textSize="10sp"
-            android:layout_marginLeft="0dp"
-            android:padding="30dp" />
 
-    </TableRow>
-
-</LinearLayout>
+    <TextView
+        android:layout_width="98dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="0dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:id="@+id/tvActionsHeader"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/cell_shape"
+        android:textSize="13sp"
+        android:paddingLeft="3dp"
+        android:layout_marginLeft="0dp"
+        />
+</TableRow>

@@ -11,6 +11,7 @@ public class RowHeadersClass {
     String mobileHeader;
     String addressHeader;
     String actionsHeader;
+
     public RowHeadersClass(String nameHeader,String emailHeader,String addressHeader,String actionsHeader){
         this.nameHeader=nameHeader;
         this.emailHeader=emailHeader;

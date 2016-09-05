@@ -60,6 +60,7 @@
         android:textColor="#fff"
         android:textSize="20sp"
         android:hint="View Target"
-        android:textColorHint="#fff" />
+        android:textColorHint="#fff"
+        android:onClick="onClickViewTargets" />
 
 </RelativeLayout>
