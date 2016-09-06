@@ -39,7 +39,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String DCOL_6 = "FRIDAY";
     public static final String DCOL_7 = "SATURDAY";
     public static final String DCOL_8 = "SUNDAY";
-    public static final String DCOL_9 = "EMAIL";
+    public static final String DCOL_9 = "TARGET_EMAIL";
+    public static final String DCOL10 = "USER_EMAIL";
 
 
     public DatabaseHelper(Context context){
@@ -51,7 +52,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         db.execSQL("create table "+TABLE_NAME+ "(ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT, SURNAME TEXT, EMAIL TEXT, PASSWORD TEXT, MOBILE TEXT, PHYSICAL_ADDRESS TEXT)");
         db.execSQL("create table "+TABLE_NAME2+ "(ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT, SURNAME TEXT, EMAIL TEXT, MOBILE TEXT, PHYSICAL_ADDRESS TEXT, USER_EMAIL_ADDRESS TEXT)");
-        db.execSQL("create table "+TABLE_NAME3+ "(ID INTEGER PRIMARY KEY AUTOINCREMENT, MONDAY TEXT, TUESDAY TEXT, WEDNESDAY TEXT, THURSDAY TEXT, FRIDAY TEXT, SATURDAY TEXT, SUNDAY TEXT, EMAIL TEXT)");
+        db.execSQL("create table "+TABLE_NAME3+ "(ID INTEGER PRIMARY KEY AUTOINCREMENT, MONDAY TEXT, TUESDAY TEXT, WEDNESDAY TEXT, THURSDAY TEXT, FRIDAY TEXT, SATURDAY TEXT, SUNDAY TEXT, TARGET_EMAIL TEXT, USER_EMAIL TEXT)");
 
     }
 
@@ -101,7 +102,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return true;
     }
 
-    public boolean newCheckInTarget(String day1, String day2, String day3, String day4, String day5,String day6,String day7,String email){
+    public boolean newCheckInTarget(String day1, String day2, String day3, String day4, String day5,String day6,String day7,String targetEmail, String userEmail){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(DCOL_2,day1);
@@ -111,7 +112,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(DCOL_6,day5);
         contentValues.put(DCOL_7,day6);
         contentValues.put(DCOL_8,day7);
-        contentValues.put(DCOL_9,email);
+        contentValues.put(DCOL_9,targetEmail);
+        contentValues.put(DCOL10, userEmail);
         long result = db.insert(TABLE_NAME3,null , contentValues);
         if (result == -1)
             return false;

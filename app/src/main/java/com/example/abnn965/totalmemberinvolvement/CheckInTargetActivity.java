@@ -40,6 +40,7 @@ public class CheckInTargetActivity extends AppCompatActivity {
     ArrayAdapter<TargetClass> targetAdapter;
     private List<TargetClass> targetList = new ArrayList<TargetClass>();
     ListView lsTarget;
+
     ArrayAdapter<RowHeadersClass> headerAdapter;
     private List<RowHeadersClass> headerList = new ArrayList<RowHeadersClass>();
     ListView lsHeader;
@@ -129,68 +130,70 @@ public class CheckInTargetActivity extends AppCompatActivity {
                 tableRow.setBackgroundColor(Color.parseColor("#EAEEF7"));
 
 
-           //The onClick listener event for checking in the members who where present on the day
-           bCheckin.setOnClickListener(new View.OnClickListener(){
+            //The onClick listener event for checking in the members who where present on the day
+            bCheckin.setOnClickListener(new View.OnClickListener(){
 
-               @TargetApi(24)
-               @Override
-               public void onClick(View view) {
-                   db = database.getReadableDatabase();
-                   selectedEmail = tvEmail.getText().toString();
-                   Toast.makeText(CheckInTargetActivity.this,selectedEmail+"",Toast.LENGTH_SHORT).show();
+                @TargetApi(24)
+                @Override
+                public void onClick(View view) {
+                    db = database.getReadableDatabase();
+                    selectedEmail = tvEmail.getText().toString();
+                    Toast.makeText(CheckInTargetActivity.this,selectedEmail+"",Toast.LENGTH_SHORT).show();
 
-                   String query = "SELECT ID,NAME,SURNAME,EMAIL,MOBILE,PHYSICAL_ADDRESS FROM target_table WHERE EMAIL='"+selectedEmail+"'";
-                   Cursor cursor = db.rawQuery(query,null);
+                    String query = "SELECT ID,NAME,SURNAME,EMAIL,MOBILE,PHYSICAL_ADDRESS FROM target_table WHERE EMAIL='"+selectedEmail+"'";
+                    Cursor cursor = db.rawQuery(query,null);
 
-                   while(cursor.moveToNext()) {
-                       int userId = cursor.getInt(0);
-                       String name = cursor.getString(1);
-                       String surname = cursor.getString(2);
-                       String email = cursor.getString(3);
-                       String mobile = cursor.getString(4);
-                       String address = cursor.getString(5);
+                    while(cursor.moveToNext()) {
+                        int userId = cursor.getInt(0);
+                        String name = cursor.getString(1);
+                        String surname = cursor.getString(2);
+                        String email = cursor.getString(3);
+                        String mobile = cursor.getString(4);
+                        String address = cursor.getString(5);
 
-                       Toast.makeText(CheckInTargetActivity.this,name,Toast.LENGTH_SHORT).show();
-                       Calendar calendar = Calendar.getInstance();
-                       Date dNow = new Date();
-                       SimpleDateFormat ft = new SimpleDateFormat("EEEE");
-                       ft.format(dNow);
-                       String currentDay=ft.format(dNow).toString();
-                       calendar.setTime(dNow);
-                       String id=String.valueOf(userId);
+                        Toast.makeText(CheckInTargetActivity.this,name,Toast.LENGTH_SHORT).show();
+                        Calendar calendar = Calendar.getInstance();
+                        Date dNow = new Date();
+                        SimpleDateFormat ft = new SimpleDateFormat("EEEE");
+                        ft.format(dNow);
+                        String currentDay=ft.format(dNow).toString();
+                        Toast.makeText(CheckInTargetActivity.this, "" + ft.format(dNow), Toast.LENGTH_LONG).show();
+                        calendar.setTime(dNow);
+                        String id=String.valueOf(userId);
+                        Toast.makeText(CheckInTargetActivity.this,currentDay+" "+id,Toast.LENGTH_SHORT).show();
 
-                       if (currentDay.equals("Sunday")) {
-                           Toast.makeText(CheckInTargetActivity.this, "Checked In Successfully", Toast.LENGTH_SHORT).show();
-                           database.checkInSunday(userId, "Present");
-                       }
-                       else if (currentDay.equals("Monday")) {
-                           Toast.makeText(CheckInTargetActivity.this, "Checked In Successfully", Toast.LENGTH_SHORT).show();
-                           database.checkInMonday(userId, "Present");
-                       }
-                       else if (currentDay.equals("Tuesday")) {
-                           Toast.makeText(CheckInTargetActivity.this, "Checked In Successfully", Toast.LENGTH_SHORT).show();
-                           database.checkInTuesday(userId, "Present");
-                       }
-                       else if (currentDay.equals("Wednesday")) {
-                           Toast.makeText(CheckInTargetActivity.this, "Checked In Successfully", Toast.LENGTH_SHORT).show();
-                           database.checkInWednesday(userId, "Present");
-                       }
-                       else if (currentDay.equals("Thursday")) {
-                           Toast.makeText(CheckInTargetActivity.this, "Checked In Successfully", Toast.LENGTH_SHORT).show();
-                           database.checkInThursday(userId, "Present");
-                       }
-                       else if (currentDay.equals("Friday")) {
-                           Toast.makeText(CheckInTargetActivity.this, "Checked In Successfully", Toast.LENGTH_SHORT).show();
-                           database.checkInFriday(userId, "Present");
-                       }
-                       else if (currentDay.equals("Saturday")) {
-                           Toast.makeText(CheckInTargetActivity.this, "Checked In Successfully", Toast.LENGTH_SHORT).show();
-                           database.checkInSaturday(userId, "Present");
-                       }
-                   }
+                        if (currentDay.equals("Sunday")) {
+                            Toast.makeText(CheckInTargetActivity.this, "Checked In Successfully", Toast.LENGTH_SHORT).show();
+                            database.checkInSunday(userId, "Present");
+                        }
+                        else if (currentDay.equals("Monday")) {
+                            Toast.makeText(CheckInTargetActivity.this, "Checked In Successfully", Toast.LENGTH_SHORT).show();
+                            database.checkInMonday(userId, "Present");
+                        }
+                        else if (currentDay.equals("Tuesday")) {
+                            Toast.makeText(CheckInTargetActivity.this, "Checked In Successfully", Toast.LENGTH_SHORT).show();
+                            database.checkInTuesday(userId, "Present");
+                        }
+                        else if (currentDay.equals("Wednesday")) {
+                            Toast.makeText(CheckInTargetActivity.this, "Checked In Successfully", Toast.LENGTH_SHORT).show();
+                            database.checkInWednesday(userId, "Present");
+                        }
+                        else if (currentDay.equals("Thursday")) {
+                            Toast.makeText(CheckInTargetActivity.this, "Checked In Successfully", Toast.LENGTH_SHORT).show();
+                            database.checkInThursday(userId, "Present");
+                        }
+                        else if (currentDay.equals("Friday")) {
+                            Toast.makeText(CheckInTargetActivity.this, "Checked In Successfully", Toast.LENGTH_SHORT).show();
+                            database.checkInFriday(userId, "Present");
+                        }
+                        else if (currentDay.equals("Saturday")) {
+                            Toast.makeText(CheckInTargetActivity.this, "Checked In Successfully", Toast.LENGTH_SHORT).show();
+                            database.checkInSaturday(userId, "Present");
+                        }
+                    }
 
-               }
-           });
+                }
+            });
 
             //The onClick listener event for checking in the members who where absent on the day
             bCalls.setOnClickListener(new View.OnClickListener(){
@@ -224,8 +227,10 @@ public class CheckInTargetActivity extends AppCompatActivity {
                         SimpleDateFormat ft = new SimpleDateFormat("EEEE");
                         ft.format(dNow);
                         String currentDay=ft.format(dNow).toString();
+                        Toast.makeText(CheckInTargetActivity.this, "" + ft.format(dNow), Toast.LENGTH_LONG).show();
                         calendar.setTime(dNow);
                         String id=String.valueOf(userId);
+                        Toast.makeText(CheckInTargetActivity.this,currentDay+" "+id,Toast.LENGTH_SHORT).show();
 
                         if (currentDay.equals("Sunday")) {
                             database.checkInSunday(userId, "Absent");
@@ -258,7 +263,7 @@ public class CheckInTargetActivity extends AppCompatActivity {
 
     //The method for setting table row header values on the table layout
     public void getTableRowHeaders(){
-           headerList.add(new RowHeadersClass("Full Name","Email","Address","Actions"));
+        headerList.add(new RowHeadersClass("Full Name","Email","Address","Actions"));
     }
 
     //The List Adapter for setting table row header values on the table layout

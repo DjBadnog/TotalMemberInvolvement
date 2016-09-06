@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableRow xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="fill_parent"
+    android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="fill_parent"
     android:layout_weight="1"
     android:background="#5A9BD5"
-    android:id="@+id/tableRowHeader">
+    android:stretchColumns="2"
+    android:id="@+id/tableRowHeaderTarget">
 
     <TextView
-        android:layout_width="98dp"
+        android:layout_width="130dp"
         android:layout_height="40dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Medium Text"
@@ -18,54 +19,40 @@
         android:paddingLeft="3dp"
         android:background="@drawable/cell_shape"
         android:layout_marginTop="0dp"
-        android:layout_marginLeft="0dp" />
+        android:layout_marginLeft="0dp"
+        android:textAlignment="center" />
 
     <TextView
-        android:layout_width="98dp"
+        android:layout_width="130dp"
         android:layout_height="40dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Medium Text"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
-        android:id="@+id/tvEmailHeader"
+        android:id="@+id/tvDaysIn"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/cell_shape"
         android:textSize="16sp"
         android:paddingLeft="3dp"
         android:layout_marginTop="0dp"
         android:layout_marginLeft="0dp"
-        />
+        android:textAlignment="center" />
 
 
     <TextView
-        android:layout_width="98dp"
+        android:layout_width="130dp"
         android:layout_height="40dp"
         android:layout_marginTop="0dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Medium Text"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
-        android:id="@+id/tvAddressHeader"
+        android:id="@+id/tvDaysAbsent"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/cell_shape"
         android:textSize="16sp"
         android:paddingLeft="3dp"
         android:layout_marginLeft="0dp"
-        />
+        android:textAlignment="center" />
 
-    <TextView
-        android:layout_width="98dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="0dp"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Medium Text"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold"
-        android:id="@+id/tvActionsHeader"
-        android:layout_gravity="center_horizontal"
-        android:background="@drawable/cell_shape"
-        android:textSize="16sp"
-        android:paddingLeft="3dp"
-        android:layout_marginLeft="0dp"
-        />
 </TableRow>

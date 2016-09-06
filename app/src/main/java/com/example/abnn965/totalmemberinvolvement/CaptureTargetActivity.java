@@ -43,6 +43,8 @@ public class CaptureTargetActivity extends AppCompatActivity {
     }
     //methord to insert data
    public void addTarget(){
+       boolean isInsertedDays = myDb.newCheckInTarget("", "", "", "", "", "", "", etdEmail.getText().toString(), cEmail.toString());
+
        boolean isInserted = myDb.captureTargetData(edtName.getText().toString(),
                edtSurname.getText().toString(),
                etdEmail.getText().toString(),

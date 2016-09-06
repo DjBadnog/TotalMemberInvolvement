@@ -37,6 +37,11 @@
             android:name=".HomeNavigationDrawerActivity"
             android:label="@string/title_activity_home_navigation_drawer"
             android:theme="@style/AppTheme.NoActionBar" />
-    </application>
+
+    <activity
+        android:name=".ViewTargetActivity"
+        android:label="@string/title_activity_view_target"
+        android:theme="@style/AppTheme.NoActionBar" />
+</application>
 
 </manifest>

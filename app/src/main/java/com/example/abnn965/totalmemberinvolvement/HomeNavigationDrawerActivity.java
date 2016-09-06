@@ -69,8 +69,10 @@ public class HomeNavigationDrawerActivity extends AppCompatActivity
 
     public void onClickViewTargets(View view){
 
-//        Intent viewTargetIntent = new Intent(HomeNavigationDrawerActivity.this, ViewTargetsActivity.class);
-//        startActivity(viewTargetIntent);
+        String cEmail = casEmail.toString();
+        Intent viewTargetIntent = new Intent(HomeNavigationDrawerActivity.this, ViewTargetActivity.class);
+        viewTargetIntent.putExtra("email", cEmail);
+        startActivity(viewTargetIntent);
     }
 
     @Override
@@ -112,16 +114,24 @@ public class HomeNavigationDrawerActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.capture_target) {
+            String cEmail = casEmail;
             Intent captureTargetIntent = new Intent(HomeNavigationDrawerActivity.this, CaptureTargetActivity.class);
+            captureTargetIntent.putExtra("email", cEmail);
             startActivity(captureTargetIntent);
 
         }
         else if (id == R.id.check_in_target) {
+            String cEmail = casEmail.toString();
             Intent checkInTargetIntent = new Intent(HomeNavigationDrawerActivity.this, CheckInTargetActivity.class);
+            checkInTargetIntent.putExtra("email", cEmail);
             startActivity(checkInTargetIntent);
+            Toast.makeText(this, ""+cEmail,Toast.LENGTH_LONG).show();
         }
         else if (id == R.id.view_target) {
-
+            String cEmail = casEmail.toString();
+            Intent viewTargetIntent = new Intent(HomeNavigationDrawerActivity.this, ViewTargetActivity.class);
+            viewTargetIntent.putExtra("email", cEmail);
+            startActivity(viewTargetIntent);
         }
         else if (id == R.id.logout) {
             Intent logoutIntent = new Intent(HomeNavigationDrawerActivity.this, MainLoginActivity.class);
