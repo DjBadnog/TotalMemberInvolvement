@@ -17,8 +17,9 @@ import android.widget.Toast;
 
 public class HomeNavigationDrawerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-            String casEmail;
-            String castedEmail;
+            private String casEmail;
+            private String targetEmail;
+            private String targetName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +48,8 @@ public class HomeNavigationDrawerActivity extends AppCompatActivity
 
         Intent intent = getIntent();
         casEmail = intent.getStringExtra("email");
-
+        targetEmail = intent.getStringExtra("targetEmail");
+        targetName = intent.getStringExtra("name");
     }
 
     public void onClickCaptureTarget(View view){
@@ -60,7 +62,7 @@ public class HomeNavigationDrawerActivity extends AppCompatActivity
 
     public void onClickCheckInTarget(View view){
 
-        String cEmail = casEmail.toString();
+        String cEmail = casEmail;
         Intent checkInTargetIntent = new Intent(HomeNavigationDrawerActivity.this, CheckInTargetActivity.class);
         checkInTargetIntent.putExtra("email", cEmail);
         startActivity(checkInTargetIntent);
@@ -69,9 +71,13 @@ public class HomeNavigationDrawerActivity extends AppCompatActivity
 
     public void onClickViewTargets(View view){
 
-        String cEmail = casEmail.toString();
+        String cEmail = casEmail;
+        String tEmail = targetEmail;
+        String tname = targetName;
         Intent viewTargetIntent = new Intent(HomeNavigationDrawerActivity.this, ViewTargetActivity.class);
         viewTargetIntent.putExtra("email", cEmail);
+        viewTargetIntent.putExtra("targetemail", tEmail);
+        viewTargetIntent.putExtra("targetName", tname);
         startActivity(viewTargetIntent);
     }
 

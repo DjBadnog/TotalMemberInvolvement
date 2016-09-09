@@ -9,7 +9,7 @@ public class ViewTargetClass {
     int daysIn;
     int daysAbsent;
 
-    public ViewTargetClass(String name,String surname,int daysIn,int daysAbsent){
+    public ViewTargetClass(String name,int daysIn,int daysAbsent){
         this.name=name;
         this.surname=surname;
         this.daysIn=daysIn;

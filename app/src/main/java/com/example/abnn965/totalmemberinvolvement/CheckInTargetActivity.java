@@ -73,7 +73,7 @@ public class CheckInTargetActivity extends AppCompatActivity {
         cEmail = intent.getStringExtra("email");
 
         String TABLE = "target_table";
-        String query = "SELECT ID,NAME,SURNAME,EMAIL,MOBILE,PHYSICAL_ADDRESS,USER_EMAIL_ADDRESS FROM target_table WHERE USER_EMAIL_ADDRESS ='"+cEmail.toString()+"'";
+        String query = "SELECT ID,NAME,SURNAME,EMAIL,MOBILE,PHYSICAL_ADDRESS,USER_EMAIL_ADDRESS FROM " +TABLE+ " WHERE USER_EMAIL_ADDRESS ='"+cEmail.toString()+"'";
         db = database.getReadableDatabase();
         Cursor cursor = db.rawQuery(query, null);
 
@@ -138,7 +138,6 @@ public class CheckInTargetActivity extends AppCompatActivity {
                 public void onClick(View view) {
                     db = database.getReadableDatabase();
                     selectedEmail = tvEmail.getText().toString();
-                    Toast.makeText(CheckInTargetActivity.this,selectedEmail+"",Toast.LENGTH_SHORT).show();
 
                     String query = "SELECT ID,NAME,SURNAME,EMAIL,MOBILE,PHYSICAL_ADDRESS FROM target_table WHERE EMAIL='"+selectedEmail+"'";
                     Cursor cursor = db.rawQuery(query,null);
@@ -151,16 +150,13 @@ public class CheckInTargetActivity extends AppCompatActivity {
                         String mobile = cursor.getString(4);
                         String address = cursor.getString(5);
 
-                        Toast.makeText(CheckInTargetActivity.this,name,Toast.LENGTH_SHORT).show();
                         Calendar calendar = Calendar.getInstance();
                         Date dNow = new Date();
                         SimpleDateFormat ft = new SimpleDateFormat("EEEE");
                         ft.format(dNow);
                         String currentDay=ft.format(dNow).toString();
-                        Toast.makeText(CheckInTargetActivity.this, "" + ft.format(dNow), Toast.LENGTH_LONG).show();
                         calendar.setTime(dNow);
                         String id=String.valueOf(userId);
-                        Toast.makeText(CheckInTargetActivity.this,currentDay+" "+id,Toast.LENGTH_SHORT).show();
 
                         if (currentDay.equals("Sunday")) {
                             Toast.makeText(CheckInTargetActivity.this, "Checked In Successfully", Toast.LENGTH_SHORT).show();
@@ -201,14 +197,9 @@ public class CheckInTargetActivity extends AppCompatActivity {
                 @TargetApi(24)
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(CheckInTargetActivity.this,"Call successful",Toast.LENGTH_SHORT).show();
-                    Intent callsIntent = new Intent(Intent.ACTION_DIAL,
-                            Uri.parse("tel:+27726882993"));
-                    startActivity(callsIntent);
 
                     db = database.getReadableDatabase();
                     selectedEmail = tvEmail.getText().toString();
-                    Toast.makeText(CheckInTargetActivity.this,selectedEmail+"",Toast.LENGTH_SHORT).show();
 
                     String query = "SELECT ID,NAME,SURNAME,EMAIL,MOBILE,PHYSICAL_ADDRESS FROM target_table WHERE EMAIL='"+selectedEmail+"'";
                     Cursor cursor = db.rawQuery(query,null);
@@ -221,16 +212,17 @@ public class CheckInTargetActivity extends AppCompatActivity {
                         String mobile = cursor.getString(4);
                         String address = cursor.getString(5);
 
-                        Toast.makeText(CheckInTargetActivity.this,name,Toast.LENGTH_SHORT).show();
+                        Intent callsIntent = new Intent(Intent.ACTION_DIAL,
+                                Uri.parse(mobile));
+                        startActivity(callsIntent);
+
                         Calendar calendar = Calendar.getInstance();
                         Date dNow = new Date();
                         SimpleDateFormat ft = new SimpleDateFormat("EEEE");
                         ft.format(dNow);
                         String currentDay=ft.format(dNow).toString();
-                        Toast.makeText(CheckInTargetActivity.this, "" + ft.format(dNow), Toast.LENGTH_LONG).show();
                         calendar.setTime(dNow);
                         String id=String.valueOf(userId);
-                        Toast.makeText(CheckInTargetActivity.this,currentDay+" "+id,Toast.LENGTH_SHORT).show();
 
                         if (currentDay.equals("Sunday")) {
                             database.checkInSunday(userId, "Absent");

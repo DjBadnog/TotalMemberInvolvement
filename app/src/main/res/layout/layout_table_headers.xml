@@ -2,18 +2,19 @@
 <TableRow xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:layout_weight="1"
+    android:layout_weight="0"
+    android:numColumns="0"
     android:background="#5A9BD5"
     android:id="@+id/tableRowHeader">
 
     <TextView
-        android:layout_width="98dp"
+        android:layout_width="105dp"
         android:layout_height="40dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Medium Text"
         android:id="@+id/tvNameHeader"
         android:textStyle="bold"
-        android:textSize="16sp"
+        android:textSize="11sp"
         android:textColor="#FFFFFF"
         android:paddingLeft="3dp"
         android:background="@drawable/cell_shape"
@@ -21,7 +22,7 @@
         android:layout_marginLeft="0dp" />
 
     <TextView
-        android:layout_width="98dp"
+        android:layout_width="105dp"
         android:layout_height="40dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Medium Text"
@@ -30,7 +31,7 @@
         android:id="@+id/tvEmailHeader"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/cell_shape"
-        android:textSize="16sp"
+        android:textSize="11sp"
         android:paddingLeft="3dp"
         android:layout_marginTop="0dp"
         android:layout_marginLeft="0dp"
@@ -38,7 +39,7 @@
 
 
     <TextView
-        android:layout_width="98dp"
+        android:layout_width="105dp"
         android:layout_height="40dp"
         android:layout_marginTop="0dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
@@ -48,13 +49,13 @@
         android:id="@+id/tvAddressHeader"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/cell_shape"
-        android:textSize="16sp"
+        android:textSize="11sp"
         android:paddingLeft="3dp"
         android:layout_marginLeft="0dp"
         />
 
     <TextView
-        android:layout_width="98dp"
+        android:layout_width="105dp"
         android:layout_height="40dp"
         android:layout_marginTop="0dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
@@ -64,7 +65,7 @@
         android:id="@+id/tvActionsHeader"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/cell_shape"
-        android:textSize="16sp"
+        android:textSize="11sp"
         android:paddingLeft="3dp"
         android:layout_marginLeft="0dp"
         />

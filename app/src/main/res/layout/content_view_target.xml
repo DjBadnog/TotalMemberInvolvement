@@ -9,10 +9,15 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_view_target"
     tools:context="com.example.abnn965.totalmemberinvolvement.ViewTargetActivity">
+   <!-- <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:stretchColumns="0"> -->
     <TableLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:stretchColumns="3">
+        android:shrinkColumns="3"
+        android:stretchColumns="0">
         <ListView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"

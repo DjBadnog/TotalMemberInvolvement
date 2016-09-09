@@ -57,10 +57,10 @@ public class MainLoginActivity extends AppCompatActivity {
                 Intent loginIntent = new Intent(MainLoginActivity.this, HomeNavigationDrawerActivity.class);
                 loginIntent.putExtra("email",casEmail);
                 startActivity(loginIntent);
-                Toast.makeText(MainLoginActivity.this, "Successfully loged in", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainLoginActivity.this, "Successfully logged in", Toast.LENGTH_SHORT).show();
             }
             else {
-                Toast.makeText(MainLoginActivity.this, "User or Password dont match", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainLoginActivity.this, "User or Password don't match", Toast.LENGTH_SHORT).show();
                 email.setText("");
                 password.setText("");
             }

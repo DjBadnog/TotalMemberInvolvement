@@ -2,16 +2,18 @@
 <TableRow xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:layout_weight="1"
+    android:layout_weight="0"
+    android:numColumns="0"
+    android:stretchColumns="0"
     android:id="@+id/tableRow">
 
     <TextView
-        android:layout_width="98dp"
+        android:layout_width="105dp"
         android:layout_height="110dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Medium Text"
         android:id="@+id/tvName"
-        android:textSize="13sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         android:background="@drawable/cell_shape"
         android:paddingLeft="3dp"
@@ -19,35 +21,35 @@
 
 
     <TextView
-        android:layout_width="98dp"
+        android:layout_width="105dp"
         android:layout_height="110dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Medium Text"
         android:id="@+id/tvEmail"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/cell_shape"
-        android:textSize="13sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         android:paddingLeft="3dp"
         android:layout_marginLeft="0dp"
         />
 
     <TextView
-        android:layout_width="98dp"
+        android:layout_width="105dp"
         android:layout_height="110dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Medium Text"
         android:id="@+id/tvAddress"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/cell_shape"
-        android:textSize="13sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         android:paddingLeft="3dp"
         android:layout_marginLeft="0dp"
         />
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="98dp"
+        android:layout_width="105dp"
         android:layout_height="110dp"
         android:paddingLeft="3dp"
         android:paddingRight="0dp"
@@ -57,28 +59,27 @@
         android:id="@+id/linearLayoutVertical">
 
         <Button
-            android:layout_width="54dp"
-            android:layout_height="30dp"
+            android:layout_width="62dp"
+            android:layout_height="40dp"
             android:text="Check In"
             android:id="@+id/btnCheckIn"
             android:layout_marginTop="1dp"
-            android:layout_marginLeft="5dp"
+            android:layout_marginLeft="2dp"
             android:background="@drawable/gradient_bg_round"
             android:textColor="#FFFFFF"
-            android:textSize="10sp" />
+            android:textSize="14sp" />
 
 
         <Button
-            android:layout_width="54dp"
-            android:layout_height="30dp"
+            android:layout_width="62dp"
+            android:layout_height="40dp"
             android:text="Call"
             android:id="@+id/btnCalls"
             android:background="@drawable/gradient_bg_round"
             android:textColor="#fFFFFF"
             android:layout_marginTop="6dp"
-            android:layout_marginLeft="5dp"
-            android:textSize="10sp" />
+            android:layout_marginLeft="2dp"
+            android:textSize="14sp" />
     </LinearLayout>
-
 
 </TableRow>

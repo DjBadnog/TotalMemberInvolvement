@@ -14,21 +14,24 @@
     android:background="#FFFFFF">
 
     <TableLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+        android:shrinkColumns="3"
+        android:stretchColumns="0">
+    <ListView
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:stretchColumns="*">
-        <ListView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/listHeaders"
-            />
+        android:layout_height="wrap_content"
+        android:numColumns="0"
+        android:id="@+id/listHeaders"
+        />
 
 
-        <ListView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/listHeaders"
-            android:id="@+id/list"
-            />
-    </TableLayout>
+    <ListView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:numColumns="0"
+        android:layout_below="@+id/listHeaders"
+        android:id="@+id/list"
+        />
+</TableLayout>
 </LinearLayout>

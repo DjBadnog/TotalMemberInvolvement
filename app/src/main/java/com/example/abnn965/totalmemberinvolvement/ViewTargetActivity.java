@@ -36,12 +36,12 @@ public class ViewTargetActivity extends AppCompatActivity {
     private List<TargetHeadersClass> targetHeaderList = new ArrayList<TargetHeadersClass>();
     ListView lsTargetHeader;
 
-    private String selectedEmail;
     DatabaseHelper database;
-
     SQLiteDatabase db;
-    private String cUserEmail,cTargetEmail;
-    String casEmail;
+
+    private String casEmail;
+    private String targetEmail;
+    private String targetName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +59,8 @@ public class ViewTargetActivity extends AppCompatActivity {
             }
         });
 
+        database = new DatabaseHelper(this);
+
         //populating the table layout with the row header values
         getTargetRowHeaders();
         targetHeaderAdapter = new MyListAdapterHeaders(getApplicationContext(),R.layout.layout_target_headers,targetHeaderList);
@@ -71,9 +73,8 @@ public class ViewTargetActivity extends AppCompatActivity {
         lsViewTarget = (ListView) findViewById(R.id.listTargetView);
         lsViewTarget.setAdapter(viewTargetAdapter);
 
-        Intent intent = getIntent();
-        casEmail = intent.getStringExtra("email");
-        Toast.makeText(this, "Email:"+casEmail, Toast.LENGTH_LONG).show();
+
+
 
     }
     //The method for setting table row header values on the table layout
@@ -118,7 +119,93 @@ public class ViewTargetActivity extends AppCompatActivity {
     //The method for fetching values from the sqlite database and displaying them on the listview on the table row
     public void getViewTargetList(){
 
+        //String tName = targetName.toString();
+        Intent intent = getIntent();
+        casEmail = intent.getStringExtra("email");
 
+        int inCount = 0;
+        int outCount = 0;
+
+        String TABLE = "days_table";
+        String query = "SELECT * FROM " +TABLE+ " WHERE USER_EMAIL ='"+casEmail+"'";
+        db = database.getReadableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+
+        while(cursor.moveToNext()){
+            int userId = cursor.getInt(0);
+            String sunday=cursor.getString(1);
+            String monday=cursor.getString(2);
+            String tuesday=cursor.getString(3);
+            String wednesday=cursor.getString(4);
+            String thursday=cursor.getString(5);
+            String friday = cursor.getString(6);
+            String saturday = cursor.getString(7);
+            String user_email = cursor.getString(8);
+            String target_email = cursor.getString(9);
+
+            if (sunday.toString().equals("Present")){
+                inCount = inCount + 1;
+            }else{
+                outCount = outCount + 1;
+            }
+
+            if (monday.toString().equals("Present")){
+                inCount = inCount + 1;
+            }else{
+                outCount = outCount + 1;
+            }
+            if (tuesday.toString().equals("Present")){
+                inCount = inCount + 1;
+            }else{
+                outCount = outCount + 1;
+            }
+
+            if (wednesday.toString().equals("Present")){
+                inCount = inCount + 1;
+            }else{
+                outCount = outCount + 1;
+            }
+            if (thursday.toString().equals("Present")){
+                inCount = inCount + 1;
+            }else{
+                outCount = outCount + 1;
+            }
+
+            if (friday.toString().equals("Present")){
+                inCount = inCount + 1;
+            }else{
+                outCount = outCount + 1;
+            }
+            if (saturday.toString().equals("Present")){
+                inCount = inCount + 1;
+            }else{
+                outCount = outCount + 1;
+            }
+
+            //viewTargetList.add(new ViewTargetClass(targetName,inCount,outCount));
+            selectTargetName(inCount, outCount);
+        }
+
+    }
+
+    public void selectTargetName(int dayIn, int dayOut){
+
+        String TABLE = "target_table";
+        String query = "SELECT * FROM " +TABLE+ " WHERE USER_EMAIL_ADDRESS ='"+casEmail+"'";
+        db = database.getReadableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+
+        while(cursor.moveToNext()) {
+            int userId = cursor.getInt(0);
+            String name = cursor.getString(1);
+            String surname = cursor.getString(2);
+            String email = cursor.getString(3);
+            String mobile = cursor.getString(4);
+            String address = cursor.getString(5);
+            String userEmail = cursor.getString(6);
+
+            viewTargetList.add(new ViewTargetClass(name+" "+surname,dayIn,dayOut));
+        }
 
     }
 

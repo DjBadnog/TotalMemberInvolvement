@@ -29,7 +29,7 @@ public class CaptureTargetActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_target_capture);
         myDb = new DatabaseHelper(this);
-        //custing my edit text varieble
+
         edtName = (EditText)findViewById(R.id.edtTargetName);
         edtSurname = (EditText)findViewById(R.id.editTextSName);
         etdEmail = (EditText)findViewById(R.id.edtTargertEmail);
@@ -53,6 +53,7 @@ public class CaptureTargetActivity extends AppCompatActivity {
                cEmail.toString());
 
        if (isInserted = true) {
+           
            Toast.makeText(CaptureTargetActivity.this, "Data Submited", Toast.LENGTH_LONG).show();
            Intent homeIntent = new Intent(CaptureTargetActivity.this, HomeNavigationDrawerActivity.class);
            startActivity(homeIntent);
