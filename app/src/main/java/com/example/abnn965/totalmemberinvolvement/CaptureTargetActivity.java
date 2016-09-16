@@ -41,7 +41,8 @@ public class CaptureTargetActivity extends AppCompatActivity {
         cEmail = intent.getStringExtra("email");
 
     }
-    //methord to insert data
+
+    //METHOD TO INSERT DATA ON TARGET TABLE ON DATABASE
    public void addTarget(){
        boolean isInsertedDays = myDb.newCheckInTarget("", "", "", "", "", "", "", etdEmail.getText().toString(), cEmail.toString());
 
@@ -54,15 +55,15 @@ public class CaptureTargetActivity extends AppCompatActivity {
 
        if (isInserted = true) {
            
-           Toast.makeText(CaptureTargetActivity.this, "Data Submited", Toast.LENGTH_LONG).show();
+           Toast.makeText(CaptureTargetActivity.this, "Data Submitted", Toast.LENGTH_LONG).show();
            Intent homeIntent = new Intent(CaptureTargetActivity.this, HomeNavigationDrawerActivity.class);
            startActivity(homeIntent);
        }
        else {
-           Toast.makeText(CaptureTargetActivity.this, "Data not Submited", Toast.LENGTH_LONG).show();
+           Toast.makeText(CaptureTargetActivity.this, "Data not Submitted", Toast.LENGTH_LONG).show();
        }
    }
-
+    //METHOD TO VALIDATE CAPTURED DATA TO REGISTER A TARGET
     public void onClickAddTarget(View v) {
         if(edtName.getText().toString().equals("")){
             edtName.setError("Please Enter name");
@@ -83,11 +84,6 @@ public class CaptureTargetActivity extends AppCompatActivity {
             addTarget();
         }
     }
-
-
-
-
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

@@ -21,7 +21,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:textColor="#FF6600"
-        android:textSize="40sp" />
+        android:textSize="35sp" />
 
     <EditText
         android:layout_width="match_parent"

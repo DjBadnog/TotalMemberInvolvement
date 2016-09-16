@@ -46,22 +46,23 @@ public class HomeNavigationDrawerActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        //INTENT TO GET EMAIL OF CURRENTLY LOGGED IN USER
         Intent intent = getIntent();
         casEmail = intent.getStringExtra("email");
         targetEmail = intent.getStringExtra("targetEmail");
         targetName = intent.getStringExtra("name");
     }
 
+    //METHOD TO NAVIGATE TO CAPTURE TARGET ACTIVITY
     public void onClickCaptureTarget(View view){
-
         String cEmail = casEmail;
         Intent captureTargetIntent = new Intent(HomeNavigationDrawerActivity.this, CaptureTargetActivity.class);
         captureTargetIntent.putExtra("email", cEmail);
         startActivity(captureTargetIntent);
     }
 
+    //METHOD TO NAVIGATE TO CHECKIN TARGET ACTIVITY
     public void onClickCheckInTarget(View view){
-
         String cEmail = casEmail;
         Intent checkInTargetIntent = new Intent(HomeNavigationDrawerActivity.this, CheckInTargetActivity.class);
         checkInTargetIntent.putExtra("email", cEmail);
@@ -69,8 +70,8 @@ public class HomeNavigationDrawerActivity extends AppCompatActivity
         Toast.makeText(this, ""+cEmail,Toast.LENGTH_LONG).show();
     }
 
+    //METHOD TO NAVIGATE TO VIEW TARGET ACTIVITY
     public void onClickViewTargets(View view){
-
         String cEmail = casEmail;
         String tEmail = targetEmail;
         String tname = targetName;

@@ -14,7 +14,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Capture Target"
+        android:text="Capture Target5"
         android:id="@+id/textView"
         android:gravity="center"
         android:textIsSelectable="false"
@@ -23,7 +23,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="false"
-        android:layout_marginTop="-70dp" />
+        android:layout_marginTop="-30dp" />
 
     <EditText
         android:layout_width="fill_parent"

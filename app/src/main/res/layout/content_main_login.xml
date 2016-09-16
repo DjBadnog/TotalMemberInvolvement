@@ -45,7 +45,7 @@
         android:layout_below="@+id/textView"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="50dp" />
+        android:layout_marginTop="40dp" />
 
     <EditText
         android:layout_width="fill_parent"
@@ -66,17 +66,17 @@
         android:layout_width="match_parent"
         android:layout_height="65dp"
         android:id="@+id/btnSubmit"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="25dp"
         android:background="@drawable/gradient_bg_round"
         android:textColor="#fff"
         android:textSize="20dp"
-        android:layout_below="@+id/edtLoginPassword"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:onClick="onClickLogin"
         android:hint="Submit"
         android:textColorHighlight="#fff"
-        android:textColorHint="#fff" />
+        android:textColorHint="#fff"
+        android:layout_below="@+id/edtLoginPassword"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:layout_width="match_parent"

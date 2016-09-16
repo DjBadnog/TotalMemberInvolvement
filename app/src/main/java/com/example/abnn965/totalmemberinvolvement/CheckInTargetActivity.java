@@ -55,20 +55,20 @@ public class CheckInTargetActivity extends AppCompatActivity {
 
         database = new DatabaseHelper(this);
 
-        //populating the table layout with the row header values
+        //POPULATING THE TABLE LAYOUT WITH THE ROW HEADER VALUES
         getTableRowHeaders();
         headerAdapter = new MyListAdapterHeaders(getApplicationContext(),R.layout.layout_table_headers,headerList);
         lsHeader = (ListView) findViewById(R.id.listHeaders);
         lsHeader.setAdapter(headerAdapter);
 
-        //populating the table layout with values
+        //POPULATING THE TABLE LAYOUT WITH VALUES
         getTargetList();
         targetAdapter = new MyListAdapterTarget(getApplicationContext(),R.layout.layout_grid_items,targetList);
         lsTarget = (ListView) findViewById(R.id.list);
         lsTarget.setAdapter(targetAdapter);
     }
 
-    //The method for fetching values from the sqlite database and displaying them on the listview on the table row
+    //METHOD FOR FETCHING VALUES FROM SQLITE DATABASE AND DISPLAY ON LISTVIEW ON TABLE ROW
     public void getTargetList(){
         Intent intent = getIntent();
         cEmail = intent.getStringExtra("email");
@@ -91,7 +91,7 @@ public class CheckInTargetActivity extends AppCompatActivity {
         }
     }
 
-    //The List Adapter private class for populating values to the table row of the table layout
+    //LIST ADAPTER FOR POPULATING VALUES TO TABLE ROW OF TABLE LAYOUT
     private class MyListAdapterTarget extends ArrayAdapter<TargetClass> {
         int resource;
         ArrayList<TargetClass> targets= new ArrayList<TargetClass>();
@@ -131,7 +131,7 @@ public class CheckInTargetActivity extends AppCompatActivity {
                 tableRow.setBackgroundColor(Color.parseColor("#EAEEF7"));
 
 
-            //The onClick listener event for checking in the members who where present on the day
+            //ONCLICK EVENT FOR CHECKING_IN MEMBERS
             bCheckin.setOnClickListener(new View.OnClickListener(){
 
                 @TargetApi(24)
@@ -192,7 +192,7 @@ public class CheckInTargetActivity extends AppCompatActivity {
                 }
             });
 
-            //The onClick listener event for checking in the members who where absent on the day
+            //ONCLICK EVENT FOR CALLING MEMBERS
             bCalls.setOnClickListener(new View.OnClickListener(){
 
                 @TargetApi(24)
@@ -254,12 +254,12 @@ public class CheckInTargetActivity extends AppCompatActivity {
         }
     }
 
-    //The method for setting table row header values on the table layout
+    //METHOD FOR SETTING TABLE ROW HEADER VALUES ON TABLE LAYOUT
     public void getTableRowHeaders(){
         headerList.add(new RowHeadersClass("Full Name","Email","Address","Actions"));
     }
 
-    //The List Adapter for setting table row header values on the table layout
+    //LISTVIEW ADAPTER FOR SETTING TABLE ROW HEADER VALUES ON TABLE LAYOUT
     private class MyListAdapterHeaders extends ArrayAdapter<RowHeadersClass> {
         int resource;
         ArrayList<RowHeadersClass> headers= new ArrayList<RowHeadersClass>();
